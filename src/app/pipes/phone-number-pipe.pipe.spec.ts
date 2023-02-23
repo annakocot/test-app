@@ -7,16 +7,14 @@ describe('PhoneNumberPipePipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should return if value is shorter than phone number', () => {
+  it('should return same value if value is shorter than phone number', () => {
     const mockValue = 123456;
-    expect(pipe.transform(mockValue).toBe(mockValue);
+    expect(pipe.transform(mockValue)).toBe('123456');
   });
 
   it('should transform value to format (XXX) XXX-XXXX', () => {
     const mockNumber = 1234567899;
     const expectedValue = '(123) 456-7899';
-    expect(pipe.transform(mockNumber).toBe(expectedValue))
+    expect(pipe.transform(mockNumber)).toBe(expectedValue);
+  });
 });
-
-
-// format: (XXX) XXX-XXXX.
