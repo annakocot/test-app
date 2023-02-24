@@ -12,5 +12,9 @@ ul {
     justify-content: center;
     user-select: none;
     margin: 0 4px;
+
+    .current {
+      color: blue
+    }
   }
 }

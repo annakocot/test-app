@@ -12,8 +12,8 @@ import {
   styleUrls: ['./paginator.component.scss']
 })
 export class PaginatorComponent implements OnChanges{
-  @Input() currentPage: number = 1;
-  @Input() totalPages: number = 1;
+  @Input() currentPage: number;
+  @Input() totalPages: number;
 
   @Output() selectedPage: EventEmitter<number> = new EventEmitter<number>();
   @Output() nextPage: EventEmitter<number> = new EventEmitter<number>();
@@ -46,10 +46,12 @@ export class PaginatorComponent implements OnChanges{
   }
 
   public onNext(): void {
+    this.currentPage += 1
     this.nextPage.emit(this.currentPage);
   }  
 
   public onPrevious(): void {
+    this.currentPage += 1
     this.previousPage.next(this.currentPage);
   }
 

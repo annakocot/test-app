@@ -4,7 +4,7 @@
       <button
       aria-label="Go To Previous Page"
       [attr.aria-disabled]="previousDisabled()"
-      disabled="previousDisabled()"
+      [disabled]="previousDisabled()"
       (click)="onPrevious()"  
       >
       Previous
@@ -30,7 +30,7 @@
       <button
       aria-label="Go To Next Page"
       [attr.aria-disabled]="nextDisabled()"
-      disabled="nextDisabled()"
+      [disabled]="nextDisabled()"
       (click)="onNext()"
       >
         Next
