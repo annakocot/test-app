@@ -1,0 +1,40 @@
+<div class="paginator">
+  <ul>
+    <li>
+      <button
+      aria-label="Go To Previous Page"
+      [attr.aria-disabled]="previousDisabled()"
+      disabled="previousDisabled()"
+      (click)="onPrevious()"  
+      >
+      Previous
+      </button>
+    </li>
+    <li *ngFor="let page of pages">
+      <a
+      [attr.aria-current]="page === currentPage ? 'page' : 'null'"
+      [attr.aria-label]="page === currentPage ? 
+      'Current Page, Page ' + page :
+      'Go To Page ' + page"
+      [class.current]="page === currentPage"
+      (click)="onSelectedPage(page)"
+      >
+      {{ page }}
+      </a>
+    </li>
+    <li *ngIf="totalPages > 3"
+      >
+        <a class="more"> ... </a>
+      </li>
+    <li>
+      <button
+      aria-label="Go To Next Page"
+      [attr.aria-disabled]="nextDisabled()"
+      disabled="nextDisabled()"
+      (click)="onNext()"
+      >
+        Next
+      </button>
+    </li>
+  </ul>
+</div>
